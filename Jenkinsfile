@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'cloning from git'
-                git 'https://github.com/Sk-Nagul-09/End-to-End-CICD-Project.git'
+                git 'https://github.com/Sk-Nagul-09/duplicate_cicd-project.git'
             }
         }
     
