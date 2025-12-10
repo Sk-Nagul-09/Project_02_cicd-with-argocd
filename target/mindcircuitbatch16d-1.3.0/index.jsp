@@ -1,5 +1,5 @@
 <html> 
 
-<h1> WELCOME TO MIND CIRCUIT , WE DONT JUST TEACH , WE ALSO BUILD PEOPLE </h1> 
+<h1> Successfully completed project cicd-with-argocd-end-to-end </h1> 
 
 </html>
