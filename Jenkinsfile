@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'cloning from git'
-                git 'https://github.com/Sk-Nagul-09/duplicate_cicd-project.git'
+                git branch: 'main', url: 'https://github.com/Sk-Nagul-09/Project_02_cicd-with-argocd.git'
             }
         }
     
@@ -21,8 +21,8 @@ pipeline {
                 sh 'ls -ltr'
                  sh '''
             mvn sonar:sonar \
-                -Dsonar.host.url=http://54.172.246.180:9000 \
-                -Dsonar.login=squ_2bce928d4643bc28ee6bef46366d4a1f27c2b955
+                -Dsonar.host.url=http://54.91.116.218:9000 \
+                -Dsonar.login=squ_5ef10e5e9d821d665a9322cb60394d5a2a45902b
         '''
          }
        }
@@ -75,7 +75,7 @@ pipeline {
     
     stage('Update Deployment File') { 
             environment { 
-                GIT_REPO_NAME = "End-to-End-CICD-Project" 
+                GIT_REPO_NAME = "Project_02_cicd-with-argocd" 
                 GIT_USER_NAME = "Sk-Nagul-09" 
             } 
             steps { 
@@ -89,7 +89,7 @@ pipeline {
                         git config user.name "Nagul" 
 						
                         # Replace the tag in the deployment YAML file with the current buil  number 						
-                        sed -i "s/cicd-e-t-end-pro:.*/cicd-e-t-end-pro:${BUILD_NUMBER}/g" deploymentfiles/deployment.yaml 
+                        sed -i "s/cicd-e-t-end-pro:.*/cicd-e-t-end-pro:${BUILD_NUMBER}/g" Deployment-files/deployment.yaml
 						
 						
                         #Stage all changes 
